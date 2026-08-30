@@ -27,18 +27,19 @@ export default function StatCard({
     }
 
     return (
-        <div className="bg-card min-w-55 rounded-3xl p-3 shadow-sm">
+        <div className="bg-card min-w-65 rounded-3xl p-3 shadow-sm">
             <div className="flex items-center justify-between">
                 <div>
-                    <p className="text-sm font-semibold text-card-text">
-                        {label}
-                    </p>
-
-                    {period && (
-                        <p className="text-xs text-card-text/70">
-                            {period}
+                    <div className="flex gap-1 items-center">
+                        <p className="text-sm font-semibold text-card-text">
+                            {label}
                         </p>
-                    )}
+                        {period && (
+                            <p className="text-xs text-card-text/70">
+                                ({period})
+                            </p>
+                        )}
+                    </div>
 
                     <div className="flex items-center gap-2">
                         <p className="mt-2 text-3xl font-semibold tracking-tight text-white">
