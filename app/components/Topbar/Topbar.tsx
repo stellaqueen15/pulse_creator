@@ -9,7 +9,7 @@ export default function Topbar() {
                 <input
                     type="text"
                     placeholder="Search..."
-                    className="w-full bg-transparent text-sm text-white outline-none placeholder:text-white/40"
+                    className="w-full bg-transparent text-sm text-white outline-none"
                 />
             </div>
 
