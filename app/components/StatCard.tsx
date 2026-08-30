@@ -27,7 +27,7 @@ export default function StatCard({
     }
 
     return (
-        <div className="bg-card min-w-65 rounded-3xl p-3 shadow-sm">
+        <div className="bg-card flex-1 min-w-65 rounded-3xl p-3 shadow-sm">
             <div className="flex items-center justify-between">
                 <div>
                     <div className="flex gap-1 items-center">
