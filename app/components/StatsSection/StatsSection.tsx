@@ -3,8 +3,29 @@
 import { useEffect, useState } from "react";
 import StatCard from "@/app/components/StatsSection/StatCard";
 
+type DashboardStats = {
+    totalAudience: {
+        value: number;
+        change: number;
+    };
+    totalViews: {
+        value: number;
+        change: number;
+    };
+    engagementRate: {
+        value: number;
+        change: number;
+    };
+    estimatedRevenue: {
+        value: number;
+        change: number;
+    };
+};
+
+type StatKey = keyof DashboardStats;
+
 export default function StatsSection() {
-    const [stats, setStats] = useState(null);
+    const [stats, setStats] = useState<DashboardStats | null>(null);
 
     useEffect(() => {
         fetch("/api/dashboard/stats")
@@ -12,7 +33,12 @@ export default function StatsSection() {
             .then((data) => setStats(data));
     }, []);
 
-    const statCards = [
+    const statCards: {
+        key: StatKey;
+        label: string;
+        icon: string;
+        period?: string;
+    }[] = [
         {
             key: "totalAudience",
             label: "Total Audience",
@@ -20,7 +46,7 @@ export default function StatsSection() {
         },
         {
             key: "totalViews",
-            label: "Cumulative Views ",
+            label: "Cumulative Views",
             period: "Last 30 Days",
             icon: "fi fi-sr-eye",
         },
@@ -37,7 +63,7 @@ export default function StatsSection() {
     ];
 
     return (
-        <div className="w-full p-6 flex gap-4">
+        <div className="w-full flex gap-4">
             {stats &&
                 statCards.map((card) => (
                     <StatCard
