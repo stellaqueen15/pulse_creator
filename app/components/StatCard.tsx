@@ -1,7 +1,7 @@
 type StatCardProps = {
     label: string;
     icon: string;
-    value: string;
+    value: number;
     change: number;
     period?: string;
 };
@@ -13,6 +13,19 @@ export default function StatCard({
  value,
  change,
  }: StatCardProps) {
+
+    function formatStat(value: number) {
+        if (value >= 1_000_000) {
+            return `${(value / 1_000_000).toFixed(1)}M`;
+        }
+
+        if (value >= 1_000) {
+            return `${(value / 1_000).toFixed(1)}K`;
+        }
+
+        return value.toString();
+    }
+
     return (
         <div className="bg-card min-w-55 rounded-3xl p-3 shadow-sm">
             <div className="flex items-center justify-between">
@@ -29,7 +42,7 @@ export default function StatCard({
 
                     <div className="flex items-center gap-2">
                         <p className="mt-2 text-3xl font-semibold tracking-tight text-white">
-                            {value}
+                            {formatStat(value)}
                         </p>
 
                         <p className="mt-2 rounded-2xl bg-green-600/30 px-1 text-[0.750rem] font-semibold text-green-600">
