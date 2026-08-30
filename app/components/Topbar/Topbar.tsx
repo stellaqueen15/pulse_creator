@@ -1,32 +1,39 @@
 "use client";
 
 export default function Topbar() {
-
     return (
-        <div className="flex h-16 rounded-2xl w-full items-center justify-between bg-card p-6">
-            <div className="flex w-72 items-center gap-2 rounded-xl bg-white/10 px-3 py-2">
-                <i className="fi fi-rr-search text-sm text-white/50"></i>
+        <div className="flex h-16 w-full items-center justify-between rounded-2xl bg-card px-3 sm:px-6">
+            <div className="flex min-w-0 flex-1 max-w-72 items-center gap-2 rounded-xl bg-white/10 px-3 py-2">
+                <i className="fi fi-rr-search shrink-0 text-sm text-white/50"></i>
+
                 <input
                     type="text"
                     placeholder="Search..."
-                    className="w-full bg-transparent text-sm text-white outline-none"
+                    className="w-full min-w-0 bg-transparent text-sm text-white outline-none"
                 />
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="ml-3 flex shrink-0 items-center gap-2 sm:gap-3">
                 <button
-                    className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white cursor-pointer transition hover:bg-white/15">
-                    <i className="fi fi-br-brightness flex items-center text-xl"></i>
+                    className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-xl bg-white/10
+                    text-white transition hover:bg-white/15 sm:h-10 sm:w-10"
+                >
+                    <i className="fi fi-br-brightness flex items-center text-lg sm:text-xl"></i>
                 </button>
 
-                <button className="relative flex h-10 w-10 items-center justify-center rounded-xl cursor-pointer bg-white/10 text-white transition hover:bg-white/15">
-                    <i className="fi fi-ss-bell flex items-center text-xl"></i>
+                <button
+                    className="relative flex h-9 w-9 cursor-pointer items-center justify-center rounded-xl
+                    bg-white/10 text-white transition hover:bg-white/15 sm:h-10 sm:w-10"
+                >
+                    <i className="fi fi-ss-bell flex items-center text-lg sm:text-xl"></i>
 
-                    <span className="absolute right-3 top-2 h-1.5 w-1.5 rounded-full bg-red-500"></span>
+                    <span className="absolute right-2 top-1.5 h-1.5 w-1.5 rounded-full bg-red-500 sm:right-3 sm:top-2" />
                 </button>
 
-                <div className="ml-2 flex items-center gap-3 border-l border-white/10 pl-4 cursor-pointer">
-                    <div className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full bg-white/20">
+                <div className="ml-1 flex cursor-pointer items-center gap-2 border-l border-white/10 pl-2
+                    sm:ml-2 sm:gap-3 sm:pl-4">
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full
+                        bg-white/20 sm:h-9 sm:w-9">
                         <img
                             src="https://i.pravatar.cc/100?img=47"
                             alt="User avatar"
@@ -34,7 +41,7 @@ export default function Topbar() {
                         />
                     </div>
 
-                    <div className="hidden leading-tight sm:block">
+                    <div className="hidden leading-tight md:block">
                         <p className="text-sm font-semibold text-white">
                             Brenda Kolaan
                         </p>
