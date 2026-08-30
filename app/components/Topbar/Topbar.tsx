@@ -14,14 +14,15 @@ export default function Topbar() {
             </div>
 
             <div className="flex items-center gap-3">
-                <button className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white transition hover:bg-white/15">
-                    <i className="fi fi-rr-sun text-base"></i>
+                <button
+                    className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white cursor-pointer transition hover:bg-white/15">
+                    <i className="fi fi-br-brightness flex items-center text-xl"></i>
                 </button>
 
                 <button className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 text-white transition hover:bg-white/15">
-                    <i className="fi fi-rr-bell text-base"></i>
+                    <i className="fi fi-ss-bell flex items-center text-xl"></i>
 
-                    <span className="absolute right-2 top-2 h-1.5 w-1.5 rounded-full bg-red-500"></span>
+                    <span className="absolute right-3 top-2 h-1.5 w-1.5 rounded-full bg-red-500"></span>
                 </button>
 
                 <div className="ml-2 flex items-center gap-3 border-l border-white/10 pl-4">
