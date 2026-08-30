@@ -46,8 +46,14 @@ export default function StatCard({
                             {formatStat(value)}
                         </p>
 
-                        <p className="mt-2 rounded-2xl bg-green-600/30 px-1 text-[0.750rem] font-semibold text-green-600">
-                            +{change}%
+                        <p
+                            className={`mt-2 rounded-2xl px-1 text-[0.750rem] font-semibold ${
+                                change >= 0
+                                    ? "bg-green-600/30 text-green-600"
+                                    : "bg-red-600/30 text-red-600"
+                            }`}
+                        >
+                            {change >= 0 ? "+" : ""}{change}%
                         </p>
                     </div>
                 </div>

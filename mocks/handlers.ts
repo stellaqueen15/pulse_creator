@@ -9,7 +9,7 @@ export const handlers = [
             },
             totalViews: {
                 value: 1200000,
-                change: 12.4,
+                change: -12.4,
             },
             engagementRate: {
                 value: 5.8,
