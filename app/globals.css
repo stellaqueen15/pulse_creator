@@ -7,15 +7,15 @@
     rgba(20, 6, 40, 0.74) 28.26%,
     rgba(28, 14, 48, 0.71) 91.2%
   );
+  --card-text: #A99ACD;
 }
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-catamaran);
   --background-image-card: var(--card-gradient);
+  --color-card-text: var(--card-text);
 }
 
 body {
   background: linear-gradient(159.02deg, #331360 14.25%, #684A08 53.31%, #6D1664 86.14%);
-  font-family: Arial, Helvetica, sans-serif;
 }
