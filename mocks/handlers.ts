@@ -3,10 +3,22 @@ import { http, HttpResponse } from "msw";
 export const handlers = [
     http.get("/api/dashboard/stats", () => {
         return HttpResponse.json({
-            totalAudience: 452300,
-            totalViews: 1200000,
-            engagementRate: 5.8,
-            estimatedRevenue: 4850,
+            totalAudience: {
+                value: 452300,
+                change: 8.2,
+            },
+            totalViews: {
+                value: 1200000,
+                change: 12.4,
+            },
+            engagementRate: {
+                value: 5.8,
+                change: 0.7,
+            },
+            estimatedRevenue: {
+                value: 4850,
+                change: 5.3,
+            },
         });
     }),
 ];
