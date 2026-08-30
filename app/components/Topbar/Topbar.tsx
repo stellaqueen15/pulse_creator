@@ -4,7 +4,7 @@ export default function Topbar() {
     return (
         <div className="flex h-16 w-full items-center justify-between rounded-2xl bg-card px-3 sm:px-6">
             <div className="flex min-w-0 flex-1 max-w-72 items-center gap-2 rounded-xl bg-white/10 px-3 py-2">
-                <i className="fi fi-rr-search shrink-0 text-sm text-white/50"></i>
+                <i className="fi fi-rr-search shrink-0 text-sm text-white/50 flex items-center justify-center"></i>
 
                 <input
                     type="text"
