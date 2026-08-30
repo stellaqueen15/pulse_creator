@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import StatCard from "@/app/components/StatCard";
+import StatCard from "@/app/components/StatsSection/StatCard";
 
 export default function Home() {
   const [stats, setStats] = useState(null);
