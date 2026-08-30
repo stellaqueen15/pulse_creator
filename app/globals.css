@@ -8,12 +8,19 @@
     rgba(28, 14, 48, 0.71) 91.2%
   );
   --card-text: #A99ACD;
+  --icon-gradient: linear-gradient(
+          138.92deg,
+          #6627C0 4.66%,
+          #AB7912 51.28%,
+          #7E1568 86.15%
+  );
 }
 
 @theme inline {
   --font-sans: var(--font-catamaran);
   --background-image-card: var(--card-gradient);
   --color-card-text: var(--card-text);
+  --background-image-icon: var(--icon-gradient);
 }
 
 body {
