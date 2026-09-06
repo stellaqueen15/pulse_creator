@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import StatCard from "@/app/components/StatsSection/StatCard";
+import ViewsChart from "@/app/components/ViewsChart/ViewsChart";
 
 type DashboardStats = {
     totalAudience: {
@@ -20,6 +21,12 @@ type DashboardStats = {
         value: number;
         change: number;
     };
+    viewsHistory: {
+        date: string;
+        tiktok: number;
+        instagram: number;
+        youtube: number;
+    }[];
 };
 
 type StatKey = keyof DashboardStats;
@@ -63,18 +70,27 @@ export default function StatsSection() {
     ];
 
     return (
-        <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            {stats &&
-                statCards.map((card) => (
-                    <StatCard
-                        key={card.key}
-                        label={card.label}
-                        icon={card.icon}
-                        value={stats[card.key].value}
-                        change={stats[card.key].change}
-                        period={card.period}
-                    />
-                ))}
-        </div>
+        <section>
+            <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+                {stats &&
+                    statCards.map((card) => (
+                        <StatCard
+                            key={card.key}
+                            label={card.label}
+                            icon={card.icon}
+                            value={stats[card.key].value}
+                            change={stats[card.key].change}
+                            period={card.period}
+                        />
+                    ))}
+            </div>
+
+            {stats && (
+                <div className="mt-6">
+                    <ViewsChart data={stats.viewsHistory} />
+                </div>
+            )}
+        </section>
+
     );
 }
