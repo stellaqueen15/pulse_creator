@@ -10,8 +10,6 @@ export default function Home() {
         <div className="ml-60 w-full p-6 flex flex-col gap-6">
           <Topbar />
           <StatsSection />
-          <div className="bg-pink-600 h-72 w-full"></div>
-          <div className="bg-purple-500 h-71 w-full"></div>
         </div>
       </div>
   );
